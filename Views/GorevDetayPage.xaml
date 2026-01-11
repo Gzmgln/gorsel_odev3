@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Odev3_Uygulama.Views.GorevDetayPage"
+             Title="Görev Detayı">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Başlık:" FontAttributes="Bold" TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+
+            <Entry x:Name="txtBaslik" 
+                   Placeholder="Görev başlığı girin" 
+                   BackgroundColor="{AppThemeBinding Light=#F0F0F0, Dark=#333333}"
+                   TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                   PlaceholderColor="{AppThemeBinding Light=Gray, Dark=LightGray}"/>
+
+            <Label Text="Detay:" FontAttributes="Bold" TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+
+            <Editor x:Name="txtDetay" 
+                    Placeholder="Detayları buraya yazın..." 
+                    HeightRequest="100" 
+                    BackgroundColor="{AppThemeBinding Light=#F0F0F0, Dark=#333333}"
+                    TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                    PlaceholderColor="{AppThemeBinding Light=Gray, Dark=LightGray}"/>
+
+            <Label Text="Tarih:" FontAttributes="Bold" TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+            <DatePicker x:Name="dpTarih" Format="dd.MM.yyyy" TextColor="{AppThemeBinding Light=Black, Dark=White}" BackgroundColor="{AppThemeBinding Light=#F0F0F0, Dark=#333333}"/>
+
+            <Label Text="Saat:" FontAttributes="Bold" TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+            <TimePicker x:Name="tpSaat" Format="HH:mm" TextColor="{AppThemeBinding Light=Black, Dark=White}" BackgroundColor="{AppThemeBinding Light=#F0F0F0, Dark=#333333}"/>
+
+            <HorizontalStackLayout Spacing="10" Margin="0,20,0,0" HorizontalOptions="Center">
+                <Button Text="Kaydet" Clicked="OnKaydetClicked" BackgroundColor="#512BD4" TextColor="White" WidthRequest="100"/>
+                <Button Text="İptal" Clicked="OnIptalClicked" BackgroundColor="Gray" TextColor="White" WidthRequest="100"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

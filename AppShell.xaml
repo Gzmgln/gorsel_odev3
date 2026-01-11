@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Odev3_Uygulama.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Odev3_Uygulama.Views"
+    Title="Odev3_Uygulama">
+
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout BackgroundColor="#512BD4" 
+                             HeightRequest="150"
+                             VerticalOptions="Center"
+                             Padding="20">
+
+            <Image Source="dotnet_bot.png" 
+                    HeightRequest="100" 
+                    HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+
+    <FlyoutItem Title="Giriş" Icon="icon_home.png">
+        <ShellContent ContentTemplate="{DataTemplate views:HomePage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Kurlar" Icon="icon_currency.png">
+        <ShellContent ContentTemplate="{DataTemplate views:KurlarPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Haberler" Icon="icon_news.png">
+        <ShellContent ContentTemplate="{DataTemplate views:HaberlerPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Hava Durumu" Icon="icon_weather.png">
+        <ShellContent ContentTemplate="{DataTemplate views:HavaDurumuPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Yapılacaklar" Icon="icon_todo.png">
+        <ShellContent ContentTemplate="{DataTemplate views:YapilacaklarPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Ayarlar" Icon="icon_settings.png">
+        <ShellContent ContentTemplate="{DataTemplate views:AyarlarPage}" />
+    </FlyoutItem>
+
+</Shell>

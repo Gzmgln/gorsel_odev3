@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Odev3_Uygulama.Views.KurlarPage"
+             Title="Güncel Kurlar">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Yenile" Clicked="OnRefreshClicked" Order="Primary" Priority="0"/>
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+        <ActivityIndicator x:Name="loading" 
+                           IsRunning="False" 
+                           HorizontalOptions="Center" 
+                           VerticalOptions="Center" 
+                           Color="#512BD4"
+                           HeightRequest="50"
+                           WidthRequest="50"
+                           ZIndex="99"/>
+
+        <CollectionView x:Name="lstKurlar">
+            <CollectionView.Header>
+                <Grid ColumnDefinitions="1.5*,*,*,0.8*,0.5*" Padding="10" BackgroundColor="#E0E0E0">
+                    <Label Text="Tür" FontAttributes="Bold" TextColor="#D35400"/>
+                    <Label Grid.Column="1" Text="Alış" FontAttributes="Bold" TextColor="#D35400" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Column="2" Text="Satış" FontAttributes="Bold" TextColor="#D35400" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Column="3" Text="Fark" FontAttributes="Bold" TextColor="#D35400" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Column="4" Text="Yön" FontAttributes="Bold" TextColor="#D35400" HorizontalTextAlignment="Center"/>
+                </Grid>
+            </CollectionView.Header>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="0,5">
+                        <Frame Padding="5" 
+                               Margin="5,0"
+                               HasShadow="True"
+                               BorderColor="{AppThemeBinding Light=LightGray, Dark=Transparent}"
+                               BackgroundColor="{AppThemeBinding Light=White, Dark=#212121}">
+
+                            <Grid ColumnDefinitions="1.5*,*,*,0.8*,0.5*">
+                                <Label Text="{Binding Tur}" TextColor="Orange" FontAttributes="Bold" VerticalOptions="Center"/>
+
+                                <Label Grid.Column="1" Text="{Binding Alis}" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="12"
+                                       TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+
+                                <Label Grid.Column="2" Text="{Binding Satis}" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="12"
+                                       TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+
+                                <Label Grid.Column="3" Text="{Binding Fark}" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="12"
+                                       TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+
+                                <Label Grid.Column="4" Text="{Binding Yon}" TextColor="{Binding Renk}" FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

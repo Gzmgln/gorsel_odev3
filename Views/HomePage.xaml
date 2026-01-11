@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Odev3_Uygulama.Views.HomePage"
+             Title="Giriş">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30" VerticalOptions="Center">
+
+            <Label Text="ÖDEV-3"
+                   FontSize="32"
+                   FontAttributes="None"
+                   HorizontalOptions="Center"
+                   TextColor="Black"/>
+
+            <Image Source="profil_resmi.jpg"
+                   HeightRequest="200"
+                   WidthRequest="200"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center" />
+
+            <Label Text="GİZEM GÜLEN"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Black"/>
+
+            <Label Text="23010310035"
+                   FontSize="24"
+                   HorizontalOptions="Center"
+                   TextColor="Black"/>
+
+            <Label Text="Bartın Üniversitesi Bilgisayar Mühendisliği Bölümü"
+                   FontSize="16"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   TextColor="Black"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

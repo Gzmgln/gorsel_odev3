@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Odev3_Uygulama.Views.HaberlerPage"
+             Title="Haberler">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Yenile" Clicked="OnRefreshClicked" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="Auto,*">
+        <CollectionView x:Name="lstCategory" HeightRequest="60" Margin="10,10,10,0">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Button Text="{Binding Title}" 
+                            CommandParameter="{Binding}" 
+                            Clicked="LoadRSSNews" 
+                            HeightRequest="50"
+                            BackgroundColor="#512BD4"
+                            TextColor="White"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <CollectionView x:Name="lstNews" 
+                        Grid.Row="1" 
+                        SelectionMode="Single" 
+                        SelectionChanged="OpenNewsDetail" 
+                        Margin="10">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="0,5" Padding="0" BorderColor="LightGray" HasShadow="True">
+                        <Grid RowDefinitions="Auto,Auto,Auto" Padding="10">
+                            <Image Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="200"/>
+                            <Label Grid.Row="1" Text="{Binding Title}" FontAttributes="Bold" FontSize="16" Margin="0,5" TextColor="Black"/>
+                            <Label Grid.Row="2" Text="{Binding PubDate}" FontSize="12" TextColor="Gray"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
